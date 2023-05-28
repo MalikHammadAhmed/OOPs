@@ -26,3 +26,15 @@ emp = Employee(101, "Hamid", 5000)
 print(emp.get_emp_id())
 print(emp.get_name())
 print(emp.get_salary())
+
+# Trying to access the attribute directly (without encapsulation)
+print(emp.__salary)        # Throws an AttributeError
+
+# Trying to modify the salary directly (without encapsulation)
+emp.__salary = -1000       # Does not affect the actual salary
+
+# Modifying the salary using the setter method (encapsulated access)
+emp.set_salary(6000)       # Updates the employee salary
+
+# Accessing the updated salary using the getter method
+print(emp.get_salary())    # Prints the updated salary
